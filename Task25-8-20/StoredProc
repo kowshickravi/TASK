@@ -1,0 +1,17 @@
+CREATE PROCEDURE Pros
+AS
+BEGIN
+Select id , salary , Dept from BE;
+END
+EXEC Pros
+Select * from BE
+
+------- parameterized stored procedure----
+CREATE PROCEDURE Pros1 (@id int)
+AS
+BEGIN
+Select id , salary , Dept from BE where id=101;
+END
+EXEC Pros
+Exec Pros1
+

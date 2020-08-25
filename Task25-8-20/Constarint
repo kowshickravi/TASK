@@ -1,0 +1,12 @@
+-----constraint-----
+create database Module
+create table ACC ( BANK varchar(500) Not null , 
+Name varchar(500) Not null,
+balance bigint,
+city varchar(500),
+Datecreated datetime NOT NULL constraint AccStatus Default getdate();
+Constraint PK_Acc primary key clustered 
+(
+balance
+)
+)

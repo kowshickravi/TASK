@@ -1,0 +1,27 @@
+IF OBJECT_ID ('dbo.ACC') IS NULL
+EXEC ('CREATE FUNCTION dbo.ACC () RETURN int AS BEGIN RETURN 0 END')
+GO
+
+ALTER FUNCTION dbo.ACC
+(
+@AccStatus varchar(20),
+@AccActivity varchar(20)
+)
+Returns varchar(20)
+AS
+
+BEGIN
+DECLARE @AccNO int,
+@AccSno INT,
+@AccHolder Varchar(20),
+@AccBalance bigint,
+
+SELECT @AccN0 = ISNULL(PARSENAME( @SavingsACC),2,''),
+SELECT @AccHolder =ISNULL(PARSENAME(@FDdeposit),3,''),
+SELECT @AccBalance = ISNULL(PARSENAME(@RD),4,'')
+
+SET @Bankno = CONVERT (VARCHAR (30),@AccNO & @SavingsACC))+
+CONVERT (INT , @AccHolder & AccBalance)
+RETURN @AccNO
+END
+GO
